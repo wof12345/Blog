@@ -2,12 +2,15 @@
 import Blogarticle from '../../components/Blogarticle.svelte';
 import Blogpicture from '../../components/Blogpicture.svelte';
 
+
+
+
 let items = {
 	articles:[0,1,2],
 	pictures:[0,1,2],
 }
 
-let fontsize = [13,14,16];
+let fontsize = [17,14,16];
 let picturesize = [200,300,400];
 
 </script>

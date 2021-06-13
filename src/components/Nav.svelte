@@ -1,9 +1,31 @@
 <script>
     export let segment;
+    import { onMount } from 'svelte';
 
     // function log1(){
     //     console.log(segment);
     // }
+
+    onMount(async () => {
+        if(segment==='blog'){
+	const nav = document.querySelector('.nav');
+    const link = document.querySelector('.link_cont')
+
+    window.addEventListener('scroll',function(){
+        if(window.scrollY>=100){
+            changestyle('2rem','10px');
+    }else{
+            changestyle('4rem','30px');
+    }
+
+    function changestyle(str1,str2){
+        nav.style.height = str1;
+        link.style.top = str2;
+    }
+    })
+
+        }
+	});
 </script>
 
 <style>
@@ -15,6 +37,7 @@
     padding: 1rem;
     z-index: 100;
 	font-size: 1.2rem;
+    transition: all .5s;
 }
 
 
@@ -47,6 +70,7 @@
     background-position: center bottom;
     transition: all 0.3s ease-out;
     width: 100%;
+    margin: 0 1rem;
 }
 
 .nav a:hover {
@@ -54,17 +78,13 @@
 	opacity:.5;
 }
 
-.nav_item{
-    margin: 1rem;
-}
-
 .nav_link--btn ,.nav_link--btn-inner{
     border: none;
-    border-radius: 3rem;
+    border-radius: 10px;
     padding: 10px 25px;
     cursor: pointer;
     font-size: 1.2rem;
-    background-color: rgba(39, 145, 238, 0.534);
+    background-color: rgba(39, 175, 238, 0.288);
     background-image: linear-gradient( black, black), none;
     background-size: 0 2px, auto;
     color: rgb(255, 255, 255);
@@ -100,7 +120,8 @@
     background-color: white;
 }
 
-@media screen and (max-width: 664px) {
+
+@media screen and (max-width: 669px) {
 		.nav_links {
             display: flex;
 		    flex-direction: column;	
@@ -119,9 +140,8 @@
             top:30px;
         }
 
-        .nav_item{
-            margin: 0px;
-            width: 100%;
+        .nav a{
+            margin:0;
         }
 
         .nav_link--btn{
@@ -142,12 +162,14 @@
         }
 
         .link_cont:hover{
-            height: 230px;
-            width: 100px;
+            height: 214px;
+            width: 140px;
             background-color: rgb(255, 255, 255);
+            border-radius: 10px;
+            box-shadow: 0 10px 10px rgba(0, 0, 0, 0.171);
         }
 
-        .nav a:hover,.nav_item:hover {
+        .nav a:hover {
             background-size: 100% 2px, auto;
     	    opacity:.5;
             width: 100%;
@@ -158,26 +180,18 @@
 </style>
 
      <nav class="nav" class:style_custom={segment==='blog'}>
-	 <img src="BlogLogo.png" alt="Blog logo" class="nav_logo" id="logo" />
+	 <img src="Logo.png" alt="Blog logo" class="nav_logo" id="logo" />
 
      <div class="link_cont">
         <img class="link_menu" src="menu.svg" alt="">
-            <ul class="nav_links">
-                <li class="nav_item">
-                    <a class="nav_link" href="/">link1</a>
-                </li>
-                <li class="nav_item">
-                    <a class="nav_link" href="/">link2</a>
-                </li>
-                <li class="nav_item">
-                    <a class="nav_link" href="/">link3</a>
-                </li>
-                <li class="nav_item">
-                   <a class="nav_link" href="/">link4</a>
-                </li>
-            </ul>
+            <div class="nav_links">
+                <a class="nav_link" href="/">Home</a>
+                <a class="nav_link" href="/">About</a>
+                <a class="nav_link" href="/">Contributions</a>
+                <a class="nav_link" href="/">Projects</a>
+            </div>
 
-            <button class="nav_link--btn-inner display">Any</button>
+            <button class="nav_link--btn-inner display">Log in</button>
      </div>
-			 <button class="nav_link--btn">Any</button>
+			 <button class="nav_link--btn">Log in</button>
     </nav>
