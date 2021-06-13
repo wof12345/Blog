@@ -1,17 +1,19 @@
 <script>
 export let fontsize;
 export let articles;
+export let idx;
 
-let fontactualsize = fontsize[articles];
+let fontactualsize = fontsize[idx];
 
 
-console.log(fontsize,articles);
+// console.log(fontsize,idx);
 </script>
 
 <style>
     .blog_article{
         line-height: 2;
+        font-family: 'Montserrat', sans-serif;
     }
 </style>
 
-<div class="blog_article" style="font-size: {fontactualsize}px;">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Pariatur, in quasi soluta neque sed, perspiciatis quidem est fuga consequatur aspernatur adipisci et alias voluptates? Adipisci dolorem autem dignissimos ipsa sit.</div>
+<div class="blog_article" style="font-size: {fontactualsize}px;">{articles}</div>

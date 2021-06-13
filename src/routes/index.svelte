@@ -1,10 +1,16 @@
 <script>
 	import Blogcard from '../components/Blogcard.svelte';
+	import { getDate } from '../components/Date.svelte';
+
+	let present = getDate();
+
+	let articles =[0,1,2];
 </script>
 
 <style>
 :root{
 	--cover_value:40%;
+	--cover_value1:300px;
 }
 
 h1{
@@ -18,7 +24,16 @@ h1{
 	grid-template-columns: repeat(auto-fill, minmax(var(--cover_value), 1fr));
 	align-items: center;
 	justify-content: center;
-	gap: 30px 5px;
+	gap: 30px 20px;
+}
+
+.container1{
+	margin: 20px;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(var(--cover_value1), 1fr));
+	align-items: center;
+	justify-content: center;
+	gap: 30px 20px;
 }
 
 @media screen and (max-width: 883px) {
@@ -42,23 +57,42 @@ h1{
 </style>
 
 
-
-
 <h1>
 	Latest contents
 </h1>
 
 <div class="container">
 
-	<Blogcard />
+	{#each articles as articles }
+		<Blogcard 
+		title = {'Computer viruses eats away your computer!'}
+		subject = {'Computer viruses'}
+		short_detail = {'Computer viruses are a very common in this computer dependent world.'}
+		author = {'Atif'}
+		date = {present}
+		/>
+	{/each}
 
-	<Blogcard />
 
-	<Blogcard />
+</div>
 
-	<Blogcard />
 
-	<Blogcard />
+<h1>
+	Other contents
+</h1>
+
+<div class="container1">
+
+	{#each articles as articles }
+		<Blogcard 
+		title = {'Computer viruses eats away your computer!'}
+		subject = {'Computer viruses'}
+		short_detail = {'Computer viruses are a very common in this computer dependent world.'}
+		author = {'Atif'}
+		date = {present}
+		/>
+	{/each}
+
 
 </div>
 

@@ -10,19 +10,26 @@
         if(segment==='blog'){
 	const nav = document.querySelector('.nav');
     const link = document.querySelector('.link_cont')
-
-    window.addEventListener('scroll',function(){
-        if(window.scrollY>=100){
-            changestyle('2rem','10px');
-    }else{
-            changestyle('4rem','30px');
-    }
+    const blogdt = document.querySelector('.blog_details')
 
     function changestyle(str1,str2){
         nav.style.height = str1;
         link.style.top = str2;
     }
+
+    const navtemp = function(entries){
+        const [entry] = entries;
+
+        if(!entry.isIntersecting)changestyle('2rem','10px');
+        else changestyle('4rem','30px');
+    }
+
+    const interobserver = new IntersectionObserver(navtemp,{
+        root:null,
+        threshold:1,
     })
+
+    interobserver.observe(blogdt);
 
         }
 	});
@@ -38,6 +45,7 @@
     z-index: 100;
 	font-size: 1.2rem;
     transition: all .5s;
+    font-family: 'Montserrat', sans-serif;
 }
 
 

@@ -1,5 +1,9 @@
 <script>
-
+export let title;
+export let subject;
+export let short_detail;
+export let author;
+export let date;
 </script>
 
 <style>
@@ -7,7 +11,7 @@
 .card_cont{
     width: 100%;
     min-width: 300px;
-    margin: 0 auto;
+    margin: 0 5px;
 }
 
 .card{
@@ -18,7 +22,7 @@
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.123), 0px 0px 5px rgba(0, 0, 0, 0.11);
     background-color: white;
     text-decoration: none;
-    height:100%;
+    
 }
 
 .card:hover{
@@ -30,16 +34,20 @@
 .card_img{
     margin: 0px;
     width: 100%;
+    height: 200px;
+    object-fit: cover;
     border-radius: 6px 6px 0 0 ;
 }
 
 .card_info{
     padding: 20px;
+     margin: 0 auto;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .title{
-    font-size: 18px;
-    font-weight: bold;
+    font-size: 20px;
+    font-weight: 700;
 }
 
 .subject{
@@ -48,7 +56,7 @@
 }
 
 .short_detail{
-    font-size: 13px;
+    font-size: 16px;
 }
 
 .author_date{
@@ -59,6 +67,7 @@
 
 .author_date>*{
     font-size: 15px;
+    color: rgba(39, 39, 39, 0.534);
 }
 
 
@@ -69,14 +78,14 @@
     <img class="card_img" src="placeholder.jpg" alt="">
 
     <div class="card_info">
-        <p class="title">Random</p>
-        <p class="subject">Computer</p>
+        <p class="title">{title}</p>
+        <p class="subject">{subject}</p>
 
-        <p class="short_detail">This is a blog about computers.</p>
+        <p class="short_detail">{short_detail}</p>
 
         <div class="author_date">
-        <p class="author">Atif</p>
-        <p class="date">6/29/2016</p>
+        <p class="author">{author}</p>
+        <p class="date">{date}</p>
         </div>
 
     </div>

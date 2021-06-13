@@ -1,12 +1,17 @@
 <script>
 import Blogarticle from '../../components/Blogarticle.svelte';
 import Blogpicture from '../../components/Blogpicture.svelte';
+import Blogpagedetails from '../../components/Blogpagedetails.svelte';
+import { getDate } from '../../components/Date.svelte';
 
+let present = getDate();
 
+let article1,article2,article3;
 
+ article1=article2=article3='Lorem ipsum, dolor sit amet consectetur adipisicing elit. Pariatur, in quasi soluta neque sed, perspiciatis quidem est fuga consequatur aspernatur adipisci et alias voluptates? Adipisci dolorem autem dignissimos ipsa sit.'
 
 let items = {
-	articles:[0,1,2],
+	articles:[article1,article2,article3],
 	pictures:[0,1,2],
 }
 
@@ -16,21 +21,6 @@ let picturesize = [200,300,400];
 </script>
 
 <style>
-
-	.blog_details{
-		margin: 30px;
-		background-image: url('/placeholder.jpg');
-		background-size: 100%;
-		background-position: center;
-		background-repeat: no-repeat;
-		background-size: cover;
-		background-position: center;
-		padding: 70px;
-	}
-
-	.blog_details>*{
-		color: white;
-	}	
 
 	.blog_items{
 		 max-width: 600px;
@@ -45,28 +35,19 @@ let picturesize = [200,300,400];
 </svelte:head>
 
 
-<section class="blog_details">
-
-	<h1>Random</h1>
-
-	<h2>Random text random</h2>
-
-	<div class="blog_info">
-
-		<p class="author">Atif</p>
-
-		<p class="date">6/29/2016</p>
-
-		<p class="subject">Computer</p>
-
-	</div>
-</section>
+<Blogpagedetails
+title = {'Computer viruses eats away your computer!'}
+subject = {'Computer viruses'}
+short_detail = {'Computer viruses are a very common in this computer dependent world.'}
+author = {'Atif'}
+date = {present}
+/>
 
 <section class="blog_items">
 
 	{#each items.articles as articles, idx}
 
-	<Blogarticle {fontsize}{articles}/>
+	<Blogarticle {fontsize}{idx}{articles}/>
 
 	{/each}
 
@@ -78,7 +59,7 @@ let picturesize = [200,300,400];
 
 	{#each items.articles as articles, idx}
 
-	<Blogarticle {fontsize}{articles}/>
+	<Blogarticle {fontsize}{idx}{articles}/>
 
 	{/each}
 

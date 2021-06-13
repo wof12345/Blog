@@ -4,7 +4,9 @@
 </script>
 
 <style>
-
+main>*{
+	font-family: 'Montserrat', sans-serif;
+}
 </style>
 
 <Nav {segment}/>
