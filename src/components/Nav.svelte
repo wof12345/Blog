@@ -1,4 +1,9 @@
 <script>
+    export let segment;
+
+    // function log1(){
+    //     console.log(segment);
+    // }
 </script>
 
 <style>
@@ -87,6 +92,14 @@
     background-color: rgba(201, 205, 209, 0.418);
 }
 
+.style_custom{
+    position: sticky;
+    top:0;
+    height: 4rem;
+    border-bottom: 1px solid rgba(148, 145, 145, 0.356);
+    background-color: white;
+}
+
 @media screen and (max-width: 664px) {
 		.nav_links {
             display: flex;
@@ -129,7 +142,7 @@
         }
 
         .link_cont:hover{
-            height: 250px;
+            height: 230px;
             width: 100px;
             background-color: rgb(255, 255, 255);
         }
@@ -144,23 +157,23 @@
 
 </style>
 
-     <nav class="nav">
+     <nav class="nav" class:style_custom={segment==='blog'}>
 	 <img src="BlogLogo.png" alt="Blog logo" class="nav_logo" id="logo" />
 
      <div class="link_cont">
         <img class="link_menu" src="menu.svg" alt="">
             <ul class="nav_links">
                 <li class="nav_item">
-                    <a class="nav_link" href="#">link1</a>
+                    <a class="nav_link" href="/">link1</a>
                 </li>
                 <li class="nav_item">
-                    <a class="nav_link" href="#">link2</a>
+                    <a class="nav_link" href="/">link2</a>
                 </li>
                 <li class="nav_item">
-                    <a class="nav_link" href="#">link3</a>
+                    <a class="nav_link" href="/">link3</a>
                 </li>
                 <li class="nav_item">
-                   <a class="nav_link" href="#">link4</a>
+                   <a class="nav_link" href="/">link4</a>
                 </li>
             </ul>
 

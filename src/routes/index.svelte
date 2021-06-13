@@ -1,5 +1,4 @@
 <script>
-	import Nav from '../components/Nav.svelte';
 	import Blogcard from '../components/Blogcard.svelte';
 </script>
 
@@ -43,7 +42,7 @@ h1{
 </style>
 
 
-<Nav />
+
 
 <h1>
 	Latest contents

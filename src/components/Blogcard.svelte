@@ -22,7 +22,7 @@
 }
 
 .card:hover{
-    transform: translateY(20px);
+    transform: translateY(10px);
     transform-style: preserve-3d;
     cursor: pointer;
 }

@@ -1,12 +1,38 @@
 <script>
-import Nav from '../../components/Nav.svelte';	
+import Blogarticle from '../../components/Blogarticle.svelte';
+import Blogpicture from '../../components/Blogpicture.svelte';
+
+let items = {
+	articles:[0,1,2],
+	pictures:[0,1,2],
+}
+
+let fontsize = [13,14,16];
+let picturesize = [200,300,400];
+
 </script>
 
 <style>
 
 	.blog_details{
 		margin: 30px;
-		background-image: url('../../static/placeholder.jpg');
+		background-image: url('/placeholder.jpg');
+		background-size: 100%;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
+		padding: 70px;
+	}
+
+	.blog_details>*{
+		color: white;
+	}	
+
+	.blog_items{
+		 max-width: 600px;
+		 margin: 10px auto;
+		 padding: 20px;
 	}
 
 </style>
@@ -15,8 +41,6 @@ import Nav from '../../components/Nav.svelte';
 	<title>Blog</title>
 </svelte:head>
 
-
-<Nav />
 
 <section class="blog_details">
 
@@ -33,4 +57,30 @@ import Nav from '../../components/Nav.svelte';
 		<p class="subject">Computer</p>
 
 	</div>
+</section>
+
+<section class="blog_items">
+
+	{#each items.articles as articles, idx}
+
+	<Blogarticle {fontsize}{articles}/>
+
+	{/each}
+
+	{#each items.pictures as pictures, idx}
+
+	<Blogpicture {picturesize}{pictures}/>
+
+	{/each}
+
+	{#each items.articles as articles, idx}
+
+	<Blogarticle {fontsize}{articles}/>
+
+	{/each}
+
+
+
+
+
 </section>
