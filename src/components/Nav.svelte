@@ -2,15 +2,22 @@
     export let segment;
     import { onMount } from 'svelte';
 
-    // function log1(){
-    //     console.log(segment);
-    // }
+    function log1(){
+        console.log(segment);
+    }
+
 
     onMount(async () => {
         if(segment==='blog'){
 	const nav = document.querySelector('.nav');
     const link = document.querySelector('.link_cont')
     const blogdt = document.querySelector('.blog_details')
+    
+    // window.addEventListener('scroll',function(){
+    //     if(window.screenY>100){
+    //         changestyle('2rem','10px');
+    //     }else changestyle('4rem','30px')
+    // })
 
     function changestyle(str1,str2){
         nav.style.height = str1;
@@ -24,7 +31,7 @@
         else changestyle('4rem','30px');
     }
 
-    const interobserver = new IntersectionObserver(navtemp,{
+    let interobserver = new IntersectionObserver(navtemp,{
         root:null,
         threshold:1,
     })
@@ -32,7 +39,9 @@
     interobserver.observe(blogdt);
 
         }
+
 	});
+
 </script>
 
 <style>
@@ -129,7 +138,7 @@
 }
 
 
-@media screen and (max-width: 669px) {
+@media screen and (max-width: 702px) {
 		.nav_links {
             display: flex;
 		    flex-direction: column;	
@@ -187,7 +196,7 @@
 
 </style>
 
-     <nav class="nav" class:style_custom={segment==='blog'}>
+     <nav class="nav" class:style_custom={segment==='blog'} on:click={log1}>
 	 <img src="Logo.png" alt="Blog logo" class="nav_logo" id="logo" />
 
      <div class="link_cont">
