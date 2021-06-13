@@ -1,13 +1,12 @@
 <script>
 
-
-
 </script>
 
 <style>
 
 .card_cont{
-    width: 300px;
+    width: 100%;
+    min-width: 300px;
     margin: 0 auto;
 }
 
@@ -15,10 +14,11 @@
     display: flex;
     flex-direction: column;
     transition: all .5s;
-    border-radius: 10px;
+    border-radius: 6px;
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.123), 0px 0px 5px rgba(0, 0, 0, 0.11);
     background-color: white;
     text-decoration: none;
+    height:100%;
 }
 
 .card:hover{
@@ -30,7 +30,7 @@
 .card_img{
     margin: 0px;
     width: 100%;
-    border-radius: 10px 10px 0 0 ;
+    border-radius: 6px 6px 0 0 ;
 }
 
 .card_info{
@@ -60,7 +60,6 @@
 .author_date>*{
     font-size: 15px;
 }
-
 
 
 </style>

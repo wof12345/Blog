@@ -4,6 +4,9 @@
 </script>
 
 <style>
+:root{
+	--cover_value:40%;
+}
 
 h1{
 	padding: 80px 0px;
@@ -13,12 +16,29 @@ h1{
 .container{
 	margin: 20px;
 	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+	grid-template-columns: repeat(auto-fill, minmax(var(--cover_value), 1fr));
 	align-items: center;
 	justify-content: center;
 	gap: 30px 5px;
 }
 
+@media screen and (max-width: 883px) {
+	:root{
+	--cover_value:100%;
+}
+}
+
+@media screen and (max-width: 700px) {
+	:root{
+	--cover_value:100%;
+}
+}
+
+@media screen and (max-width: 345px) {
+	.container{
+		margin: 0;
+	}
+}
 
 </style>
 

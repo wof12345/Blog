@@ -23,7 +23,7 @@
 }
 
 .link_cont>*{
-margin:10px 0 ;
+    margin:10px 0 ;
 }
 
 .nav_links {
@@ -41,6 +41,7 @@ margin:10px 0 ;
     background-repeat: no-repeat;
     background-position: center bottom;
     transition: all 0.3s ease-out;
+    width: 100%;
 }
 
 .nav a:hover {
@@ -49,19 +50,19 @@ margin:10px 0 ;
 }
 
 .nav_item{
-    margin: 2rem;
+    margin: 1rem;
 }
 
 .nav_link--btn ,.nav_link--btn-inner{
     border: none;
     border-radius: 3rem;
-    padding: 10px 20px;
+    padding: 10px 25px;
     cursor: pointer;
     font-size: 1.2rem;
-    background-color: rgba(91, 164, 228,.45);
+    background-color: rgba(39, 145, 238, 0.534);
     background-image: linear-gradient( black, black), none;
     background-size: 0 2px, auto;
-    color: aliceblue;
+    color: rgb(255, 255, 255);
     background-repeat: no-repeat;
     background-position: center bottom;
     transition: all 0.3s ease-out;
@@ -71,7 +72,7 @@ margin:10px 0 ;
     display: none;
 }
 
-.nav_link--btn:hover {
+.nav_link--btn:hover ,.nav_link--btn-inner:hover{
 	color:black;
     background-color: white;
     background-size: 100% 2px, auto;
@@ -86,18 +87,19 @@ margin:10px 0 ;
     background-color: rgba(201, 205, 209, 0.418);
 }
 
-@media screen and (max-width: 614px) {
+@media screen and (max-width: 664px) {
 		.nav_links {
             display: flex;
 		    flex-direction: column;	
             padding: 0;
             margin: 0;
-            align-items: center;
+            width: 100%;
+            text-align: center;
 		}
 
         .link_cont{
             height: 45px;
-            width: 40px;
+            width: 30px;
             overflow: hidden;
             position: absolute;
             right: 10px;
@@ -106,10 +108,15 @@ margin:10px 0 ;
 
         .nav_item{
             margin: 0px;
+            width: 100%;
         }
 
         .nav_link--btn{
             display: none;
+        }
+
+        .nav_link--btn-inner{
+            width: 100%;
         }
 
         .display{
@@ -118,13 +125,20 @@ margin:10px 0 ;
 
         .link_menu{
            display: block;
-           width: 40px;
+           width: 30px;
         }
 
         .link_cont:hover{
             height: 250px;
             width: 100px;
-            background-color: rgba(240, 248, 255, 0.199);
+            background-color: rgb(255, 255, 255);
+        }
+
+        .nav a:hover,.nav_item:hover {
+            background-size: 100% 2px, auto;
+    	    opacity:.5;
+            width: 100%;
+            background-color: rgba(164, 166, 168, 0.295);
         }
 	}
 
