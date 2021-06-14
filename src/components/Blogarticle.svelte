@@ -13,6 +13,7 @@ let fontactualsize = fontsize[idx];
     .blog_article{
         line-height: 2;
         font-family: 'Montserrat', sans-serif;
+        margin-bottom: 10px;
     }
 </style>
 

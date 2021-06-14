@@ -63,6 +63,13 @@ date = {present}
 
 	{/each}
 
+	<Blogarticle 
+	fontsize={15}
+	idx={null}
+	articles={article1}/>
+
+	<Blogpicture picturesize={['540']}
+	              pictures={0}/>
 
 
 
