@@ -11,6 +11,7 @@ export let date;
 .card_cont{
     width: 100%;
     min-width: 300px;
+    max-width: 90rem;
     margin: 0 5px;
 }
 
