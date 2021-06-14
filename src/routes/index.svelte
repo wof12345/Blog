@@ -27,14 +27,14 @@ h1{
 	gap: 30px 20px;
 }
 
-.container1{
+/* .container1{
 	margin: 20px;
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(var(--cover_value1), 1fr));
 	align-items: center;
 	justify-content: center;
 	gap: 30px 20px;
-}
+} */
 
 @media screen and (max-width: 883px) {
 	:root{
@@ -42,11 +42,6 @@ h1{
 }
 }
 
-@media screen and (max-width: 700px) {
-	:root{
-	--cover_value:100%;
-}
-}
 
 @media screen and (max-width: 345px) {
 	.container{
@@ -61,7 +56,7 @@ h1{
 	Latest contents
 </h1>
 
-<div class="container">
+<section class="container">
 
 	{#each articles as articles }
 		<Blogcard 
@@ -74,14 +69,14 @@ h1{
 	{/each}
 
 
-</div>
+</section>
 
 
 <h1>
 	Other contents
 </h1>
 
-<div class="container1">
+<section class="container">
 
 	{#each articles as articles }
 		<Blogcard 
@@ -94,7 +89,7 @@ h1{
 	{/each}
 
 
-</div>
+</section>
 
 
 
